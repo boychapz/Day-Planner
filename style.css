@@ -1,69 +1,63 @@
-
-
-.border-down{
-
-    border-bottom: 10px solid blue;
+.border-down {
+  border-bottom: 10px solid blue;
 }
 
-.word-wrap{word-wrap: break-word;}
-
-
-#text{
-    text-align: center;
+.word-wrap {
+  word-wrap: break-word;
 }
 
-.big{
-    font-size: 70px;
+#text {
+  text-align: center;
+}
+
+.big {
+  font-size: 70px;
 }
 
 .ButtonClicked {
-    background-color:red;
+  background-color: red;
 }
 
-.input{
-    padding-top: 5px;
+.input {
+  padding-top: 5px;
 }
 
-#clock{
-    font-size: 20px ;
-    color: blue;
+#clock {
+  font-size: 20px;
+  color: blue;
 }
 
-@media(min-width: 768px){
+@media (min-width: 768px) {
+  .myrow {
+    position: relative;
+    border: 2px solid black;
+  }
 
-    .myrow{
-        position: relative;
-        border: 2px solid black;
-    }
+  .col-border {
+    padding-left: 10px;
+  }
 
-    .col-border{
-        padding-left: 10px;
-    }
+  .my-col {
+    padding-left: 0;
+    position: static;
+  }
 
-    .my-col{
-        padding-left: 0;
-        position: static;
-    }
+  .my-col:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: 2px solid black;
+  }
 
-    .my-col:before {
-        content: "";
-        position: absolute;
-        top: 0 ;
-        bottom: 0 ;
-        border-left: 2px solid black;
-        
-    } 
-    
-.col-1{
+  .col-1 {
     content: "";
     padding-right: 10px;
     position: absolute;
     border-right: 2px solid black;
+  }
 }
 
-}
-
-button{
-    max-width: 15;
-    
+button {
+  max-width: 15;
 }

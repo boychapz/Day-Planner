@@ -1,51 +1,36 @@
+var T = $("#clock").html(moment().format("MMMM Do YYYY, h:mm:ss a"));
 
-function update() {
-    $('#clock').html(moment().format('MMMM Do YYYY, h:mm:ss a'));
-  }
-  
-  setInterval(update, 1000);
-  
-  var store5 = $("#input5");
-  var renderText = $("#store");
+$(document).ready(function () {
+  var saveButton = $(".save");
+  var clearBtn = $("#clear-btn");
 
+  $("#input6").val(localStorage.getItem("message1"));
+  saveButton.on("click", function () {
+    var msg = $("#input6").val();
+    localStorage.setItem("message1", msg);
+    console.log(msg);
+  });
+  $("#input7").val(localStorage.getItem("message2"));
+  saveButton.on("click", function () {
+    var msg = $("#input7").val();
+    localStorage.setItem("message2", msg);
+    console.log(msg);
+  });
+  $("#input8").val(localStorage.getItem("message3"));
+  saveButton.on("click", function () {
+    var msg = $("#input8").val();
+    localStorage.setItem("message3", msg);
+    console.log(msg);
+  });
+  $("#input9").val(localStorage.getItem("message4"));
+  saveButton.on("click", function () {
+    var msg = $("#input9").val();
+    localStorage.setItem("message4", msg);
+    console.log(msg);
+  });
 
-    renderLastRegistered();
-
-    function renderLastRegistered() {
-        var store5 = localStorage.getItem('id');
-      
-        if (store5 === null) {
-          return;
-        }
-      
-        renderText.attr("value", store5);
-        
-      }
-
-    $('#btn5').on('click', function(event){
-        event.preventDefault();
-       
-        var inputEl = $('#input5').val();
-        $('#input5').text(inputEl);
-        console.log(inputEl);
-
-        $('input[type="text"]').each(function(){   
-            $(this).addClass('red'); 
-            var id = $(this).attr('id');
-            var value = $(this).val();
-           localStorage.setItem(id, value);
-           renderLastRegistered();
-           
-           
-    
-        });           
-
-
-    });
-    
-    
-
-
-
-
-
+  clearBtn.on("click", function () {
+    localStorage.clear();
+    location.reload(true);
+  });
+});
